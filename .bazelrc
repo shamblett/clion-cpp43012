@@ -1,0 +1,33 @@
+# Enable Bzlmod for every Bazel command
+common --enable_bzlmod
+
+# C++ standard
+build --cxxopt="-std=c++23"
+
+# Write to ccache cache
+build --sandbox_writable_path=/home/steve/.cache/ccache
+
+# Colour
+build --color=yes
+query --color=yes
+test --color=yes
+
+# No fission for builds
+build --fission=no
+build --features=-per_object_debug_info
+
+# Address Sanitizer (ASAN)
+build:asan --strip=never
+build:asan --copt=-fsanitize=address
+build:asan --copt=-O1
+build:asan --copt=-g
+build:asan --copt=-fno-omit-frame-pointer
+build:asan --linkopt=-fsanitize=address
+
+# Undefined Behavior Sanitizer (UBSAN)
+build:ubsan --strip=never
+build:ubsan --copt=-fsanitize=undefined
+build:ubsan --copt=-O1
+build:ubsan --copt=-g
+build:ubsan --copt=-fno-omit-frame-pointer
+build:ubsan --linkopt=-fsanitize=undefined

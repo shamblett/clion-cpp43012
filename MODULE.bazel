@@ -1,0 +1,12 @@
+#
+# CPP-43012 project module file
+#
+
+module(
+    name = "cpp-43012",
+)
+
+bazel_dep(
+    name = "rules_cc",
+    version = "0.2.17",
+)
