@@ -35,3 +35,9 @@ Child exited with status 2
 
 If you select to run the test from the carat it works. Also note that the carat entries name the test as 'unnamed' initially,
 you have to run them once for the name to appear.
+
+Command line output in debug window -
+```
+Running debug binary
+Command: /usr/bin/setsid --wait bazel test --tool_tag=ijwb:CLion --compilation_mode=dbg --strip=never --dynamic_mode=off --fission=yes --copt=-g2 --copt=-O0 --nocache_test_results --test_strategy=exclusive --test_sharding_strategy=disabled --test_timeout=3600 "--run_under='bash' '/home/steve/.local/share/JetBrains/CLion2026.1/clwb/gdb/gdbserver' '/usr/bin/gdbserver' --once localhost:5006 --target" --color=yes --progress_in_terminal_title=no --runs_per_test=1 --flaky_test_attempts=1 --build_event_binary_file=/tmp/intellij-bep-3c11f6ee-5a5b-4462-8e83-14b9b3f6db60 --nobuild_event_binary_file_path_conversion --build_event_publish_all_actions "--test_filter=Adder - Simple" -- //test/adder:adder
+```
