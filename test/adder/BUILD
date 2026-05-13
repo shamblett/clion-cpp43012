@@ -13,7 +13,7 @@ cc_library(
     visibility = ["//test:__pkg__"],
     deps = [
         "//lib/adder",
-         "//test/vendor/catch2v3",
+        "//test/vendor/catch2v3",
     ],
 )
 
